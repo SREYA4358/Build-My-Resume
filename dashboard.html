@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dashboard — Resume Builder</title>
+  </head>
+  <body class="dashboard-page">
+    <!-- Header -->
+    <header class="topbar">
+      <div class="brand">BUILD MY RESUME</div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">
+          All Templates
+        </button>
+        <button class="filter-btn" data-filter="fresher">Fresher</button>
+        <button class="filter-btn" data-filter="experience">Experienced</button>
+      </div>
+      <div class="actions">
+        <button id="newResumeBtn" class="btn primary">
+          + Create New Resume
+        </button>
+        <button id="logoutBtn" class="btn ghost">Logout</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Welcome Section -->
+      <section class="welcome mt-3">
+        <h1 id="welcomeTitle">Welcome back!</h1>
+        <p>Start building your professional resume today</p>
+      </section>
+
+      <!-- Your Saved Resumes -->
+      <section class="saved-resumes mt-3">
+        <h2>Your Saved Resumes</h2>
+        <div id="resumesList" class="resumes-list">
+          <p class="text-muted" style="grid-column: 1 / -1">
+            No saved resumes yet. Create your first resume!
+          </p>
+        </div>
+      </section>
+
+      <!-- Templates Section -->
+      <section class="mt-3">
+        <h2>Choose a Template</h2>
+        <div class="templates">
+          <!-- Template 1 -->
+          <div class="template-card" data-id="1" data-level="experience">
+            <div class="thumb t1">
+              <div class="thumb-preview">
+                <div class="tp-name">John Smith</div>
+                <div class="tp-line">Senior Software Engineer</div>
+                <div class="tp-line small">JavaScript • React • Node.js</div>
+              </div>
+            </div>
+            <div class="template-card-content">
+              <h3>Clean Classic</h3>
+              <p>
+                Timeless and professional. Perfect for executives and
+                experienced professionals.
+              </p>
+              <div class="card-actions">
+                <a class="btn primary" href="builder.html?template=1"
+                  >Use Template</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 2 -->
+          <div class="template-card" data-id="2" data-level="experience">
+            <div class="thumb t2">
+              <div class="thumb-preview">
+                <div class="tp-name">Sarah Anderson</div>
+                <div class="tp-line">Creative Director</div>
+                <div class="tp-line small">Design • Branding • UI/UX</div>
+              </div>
+            </div>
+            <div class="template-card-content">
+              <h3>Modern</h3>
+              <p>
+                Contemporary design with bold accents. Great for creative
+                professionals.
+              </p>
+              <div class="card-actions">
+                <a class="btn primary" href="builder.html?template=2"
+                  >Use Template</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 3 -->
+          <div class="template-card" data-id="3" data-level="experience">
+            <div class="thumb t3">
+              <div class="thumb-preview">
+                <div class="tp-name">Michael Chen</div>
+                <div class="tp-line">Project Manager</div>
+                <div class="tp-line small">Agile • Leadership • Planning</div>
+              </div>
+            </div>
+            <div class="template-card-content">
+              <h3>Professional</h3>
+              <p>
+                Structured layout ideal for corporate roles and technical
+                positions.
+              </p>
+              <div class="card-actions">
+                <a class="btn primary" href="builder.html?template=3"
+                  >Use Template</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 4 -->
+          <div class="template-card" data-id="4" data-level="fresher">
+            <div class="thumb t4">
+              <div class="thumb-preview">
+                <div class="tp-name">Emma Wilson</div>
+                <div class="tp-line">Graphic Designer</div>
+                <div class="tp-line small">Adobe Suite • Web Design</div>
+              </div>
+            </div>
+            <div class="template-card-content">
+              <h3>Creative</h3>
+              <p>
+                Eye-catching design perfect for designers and creative
+                positions.
+              </p>
+              <div class="card-actions">
+                <a class="btn primary" href="builder.html?template=4"
+                  >Use Template</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 5 -->
+          <div class="template-card" data-id="5" data-level="fresher">
+            <div class="thumb t5">
+              <div class="thumb-preview">
+                <div class="tp-name">Alex Kumar</div>
+                <div class="tp-line">Recent Graduate</div>
+                <div class="tp-line small">Java • Python • Data Science</div>
+              </div>
+            </div>
+            <div class="template-card-content">
+              <h3>Minimal</h3>
+              <p>
+                Clean and simple design focused on content. Great for freshers.
+              </p>
+              <div class="card-actions">
+                <a class="btn primary" href="builder.html?template=5"
+                  >Use Template</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 6 -->
+          <div class="template-card" data-id="6" data-level="all">
+            <div class="thumb t6">
+              <div class="thumb-preview">
+                <div class="tp-name">Jessica Brooks</div>
+                <div class="tp-line">Full Stack Developer</div>
+                <div class="tp-line small">React • Node.js • MongoDB</div>
+              </div>
+            </div>
+            <div class="template-card-content">
+              <h3>One-Page</h3>
+              <p>
+                Condensed format perfect for quick reviews and job applications.
+              </p>
+              <div class="card-actions">
+                <a class="btn primary" href="builder.html?template=6"
+                  >Use Template</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

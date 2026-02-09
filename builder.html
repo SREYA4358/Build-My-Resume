@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Resume Editor — Build My Resume</title>
+  </head>
+  <body class="builder-page">
+    <!-- Header -->
+    <header class="topbar">
+      <div class="brand">BUILD MY RESUME</div>
+      <div class="actions">
+        <button id="backBtn" class="btn ghost">Back</button>
+        <button id="saveBtn" class="btn primary">Save Resume</button>
+        <button id="downloadBtn" class="btn secondary">Download</button>
+      </div>
+    </header>
+
+    <!-- Editor & Preview Section -->
+    <main class="builder container">
+      <!-- Sidebar Editor -->
+      <aside class="editor-panel">
+        <h3>Resume Details</h3>
+
+        <!-- Contact Information -->
+        <div class="form-group">
+          <label for="inputName">Full Name *</label>
+          <input id="inputName" type="text" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail">Email *</label>
+          <input
+            id="inputEmail"
+            type="email"
+            placeholder="john@example.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="inputPhone">Phone</label>
+          <input id="inputPhone" type="tel" placeholder="(123) 456-7890" />
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Professional Summary -->
+        <div class="form-group">
+          <label for="inputSummary">Professional Summary</label>
+          <textarea
+            id="inputSummary"
+            placeholder="Brief overview of your professional background and goals"
+          ></textarea>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Experience -->
+        <div class="form-group">
+          <label for="inputExperience">Experience</label>
+          <textarea
+            id="inputExperience"
+            placeholder="Job title • Company • Years&#10;Description of responsibilities and achievements"
+          ></textarea>
+        </div>
+
+        <!-- Education -->
+        <div class="form-group">
+          <label for="inputCollegeName">College/University Name</label>
+          <input
+            id="inputCollegeName"
+            type="text"
+            placeholder="e.g. Stanford University"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="inputDegree">Degree & Field of Study</label>
+          <input
+            id="inputDegree"
+            type="text"
+            placeholder="e.g. Bachelor of Science in Computer Science"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="inputGraduationYear">Year of Passing</label>
+          <input id="inputGraduationYear" type="text" placeholder="e.g. 2023" />
+        </div>
+
+        <div class="form-group">
+          <label for="inputPercentage">GPA / Percentage</label>
+          <input
+            id="inputPercentage"
+            type="text"
+            placeholder="e.g. 3.8 / 8.9"
+          />
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Skills -->
+        <div class="form-group">
+          <label for="inputSkills">Skills (comma separated)</label>
+          <input
+            id="inputSkills"
+            type="text"
+            placeholder="JavaScript, React, Web Design, UI/UX"
+          />
+        </div>
+
+        <!-- Projects -->
+        <div class="form-group">
+          <label for="inputProjects">Projects</label>
+          <textarea
+            id="inputProjects"
+            placeholder="Project name/link • Brief description"
+          ></textarea>
+        </div>
+
+        <!-- Certifications -->
+        <div class="form-group">
+          <label for="inputCertificates">Certifications</label>
+          <textarea
+            id="inputCertificates"
+            placeholder="Certification name • Issuer • Year"
+          ></textarea>
+        </div>
+      </aside>
+
+      <!-- Resume Preview -->
+      <section class="preview-panel">
+        <div id="templatePreview" class="resume template-1">
+          <!-- Template content rendered by JavaScript -->
+          <div class="r-header">
+            <h1 id="rName" data-default="Your Name">Your Name</h1>
+            <p id="rContact" data-default="email • phone">email • phone</p>
+          </div>
+
+          <div class="r-section" id="summarySection" style="display: none">
+            <h2>Professional Summary</h2>
+            <div
+              class="r-entry-content"
+              id="rSummary"
+              data-default="Your professional summary will appear here"
+            >
+              Your professional summary will appear here
+            </div>
+          </div>
+
+          <div class="r-section" id="experienceSection" style="display: none">
+            <h2>Experience</h2>
+            <div
+              id="rExperience"
+              data-default="Your experience will appear here"
+            >
+              Your experience will appear here
+            </div>
+          </div>
+
+          <div class="r-section" id="educationSection" style="display: none">
+            <h2>Education</h2>
+            <div id="rEducation" data-default="Your education will appear here">
+              Your education will appear here
+            </div>
+          </div>
+
+          <div class="r-section" id="skillsSection" style="display: none">
+            <h2>Skills</h2>
+            <div
+              id="rSkills"
+              class="skills-list"
+              data-default="Your skills will appear here"
+            >
+              Your skills will appear here
+            </div>
+          </div>
+
+          <div class="r-section" id="projectsSection" style="display: none">
+            <h2>Projects</h2>
+            <div id="rProjects" data-default="Your projects will appear here">
+              Your projects will appear here
+            </div>
+          </div>
+
+          <div class="r-section" id="certificatesSection" style="display: none">
+            <h2>Certifications</h2>
+            <div
+              id="rCertificates"
+              data-default="Your certifications will appear here"
+            >
+              Your certifications will appear here
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview Button -->
+        <div class="preview-button-section">
+          <button
+            id="previewBtn"
+            class="btn primary"
+            style="
+              width: 100%;
+              margin-top: 1.5rem;
+              padding: 0.75rem 1.5rem;
+              font-size: 1rem;
+            "
+          >
+            👁️ Preview & Download Resume
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
