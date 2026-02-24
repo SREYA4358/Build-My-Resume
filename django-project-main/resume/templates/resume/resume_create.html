@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create Resume</title>
+  </head>
+  <body>
+    <h1>Create a New Resume</h1>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <div>
+        <label for="id_name">Full Name:</label>
+        <input type="text" id="id_name" name="name" required />
+      </div>
+
+      <div>
+        <label for="id_email">Email:</label>
+        <input type="email" id="id_email" name="email" required />
+      </div>
+
+      <div>
+        <label for="id_phone">Phone:</label>
+        <input type="text" id="id_phone" name="phone" required />
+      </div>
+
+      <div>
+        <label for="id_summary">Professional Summary:</label><br />
+        <textarea id="id_summary" name="summary" rows="4"></textarea>
+      </div>
+
+      <div>
+        <label for="id_experience">Experience:</label><br />
+        <textarea id="id_experience" name="experience" rows="4"></textarea>
+      </div>
+
+      <div>
+        <label for="id_education">Education:</label><br />
+        <textarea id="id_education" name="education" rows="4"></textarea>
+      </div>
+
+      <div>
+        <label for="id_skills">Skills:</label><br />
+        <textarea id="id_skills" name="skills" rows="3"></textarea>
+      </div>
+
+      <button type="submit">Save Resume</button>
+    </form>
+
+    <p>
+      <a href="{% url 'resume_list' %}">Back to your resumes</a>
+    </p>
+  </body>
+</html>
+
+
