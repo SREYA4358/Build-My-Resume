@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Resumes</title>
+  </head>
+  <body>
+    <h1>Your Resumes</h1>
+
+    {% if resumes %}
+      <ul>
+        {% for resume in resumes %}
+          <li>
+            <a href="{% url 'resume_detail' resume.id %}">
+              {{ resume.name }} – {{ resume.email }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You have not created any resumes yet.</p>
+    {% endif %}
+
+    <p>
+      <a href="{% url 'resume_create' %}">Create a new resume</a>
+    </p>
+  </body>
+</html>
+
+

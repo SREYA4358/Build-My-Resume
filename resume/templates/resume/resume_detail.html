@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ resume.name }}'s Resume</title>
+  </head>
+  <body>
+    <h1>{{ resume.name }}'s Resume</h1>
+
+    <section>
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> {{ resume.email }}</p>
+      <p><strong>Phone:</strong> {{ resume.phone }}</p>
+      {% if resume.github %}
+        <p><strong>GitHub:</strong> <a href="{{ resume.github }}">{{ resume.github }}</a></p>
+      {% endif %}
+      {% if resume.linkedin %}
+        <p><strong>LinkedIn:</strong> <a href="{{ resume.linkedin }}">{{ resume.linkedin }}</a></p>
+      {% endif %}
+    </section>
+
+    {% if resume.summary %}
+      <section>
+        <h2>Professional Summary</h2>
+        <p>{{ resume.summary|linebreaksbr }}</p>
+      </section>
+    {% endif %}
+
+    {% if resume.experience %}
+      <section>
+        <h2>Experience</h2>
+        <p>{{ resume.experience|linebreaksbr }}</p>
+      </section>
+    {% endif %}
+
+    {% if resume.education %}
+      <section>
+        <h2>Education</h2>
+        <p>{{ resume.education|linebreaksbr }}</p>
+      </section>
+    {% endif %}
+
+    {% if resume.skills %}
+      <section>
+        <h2>Skills</h2>
+        <p>{{ resume.skills|linebreaksbr }}</p>
+      </section>
+    {% endif %}
+
+    <p>
+      <a href="{% url 'resume_list' %}">Back to your resumes</a>
+    </p>
+  </body>
+</html>
+
+
